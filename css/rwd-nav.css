@@ -1,0 +1,73 @@
+/* Global
+------------------------------ */
+
+body {
+    font: 85%/1.4 helvetica, sans-serif; 
+    padding: 1em .5em;
+}
+
+
+/* Navigation
+------------------------------ */
+.nav-primary {
+   position: relative;
+   margin: .5em;
+}
+.nav-primary ul {
+   border: 1px solid #eee;
+}
+.nav-primary a {
+   display: block;
+   padding: .5em 1em;
+   text-decoration: none;
+   color: #333;
+}
+.nav-primary a:hover {
+   background-color: #f8f8f8;
+}
+.nav-primary .nav-current {
+   font-weight: bold;
+}
+
+/* drop down menu formatting when all menu items won't fit in a single line */
+.no-fit .nav-primary h3 {
+   position: absolute;
+   top: -5px;
+   right: -5px;
+   display: block;
+   width: 30px;
+   height: 30px; 
+   background: #666 url(img/icons.png) no-repeat -211px 5px;
+   text-indent: -999em;
+   cursor: pointer;
+}
+.no-fit .nav-primary.expanded h3 {
+   background-position: -175px 5px;
+}
+.no-fit .nav-primary li {
+   clear: left;
+   display: none;
+}    
+.no-fit .nav-primary.expanded li,
+.no-fit .nav-primary li.nav-current {
+   display: list-item;
+} 
+
+
+
+
+/* Media queries
+------------------------------ */
+
+@media screen and (min-width: 640px) {
+    .nav-primary ul {
+      float: left;
+      width: 98%;
+    }
+    .nav-primary h3 {
+      display: none;
+    }
+    .nav-primary li {
+      float: left;
+    }    
+}
