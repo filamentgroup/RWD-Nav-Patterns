@@ -1,9 +1,9 @@
- <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-fontface ie6 legacy-ie"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-fontface ie7 legacy-ie"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-fontface ie8 legacy-ie"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-fontface ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-fontface"> <!--<![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 legacy-ie"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 legacy-ie"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8 legacy-ie"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -11,31 +11,28 @@
 		<title>responsive navigation patterns</title>
 		<meta name="description" content="Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus." />
 		
-		<link rel="stylesheet" href="css/reset.css" media="only all" />
-		<link rel="stylesheet" href="css/rwd-nav.css" media="only all" id="enhanced-css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/rwd-nav.css" />
 		
+		<script src="js/lib/respond.js"></script>
 		<script src="js/lib/jquery.js"></script>
 		<script src="js/rwd-nav.js"></script>
+	</head>
 
-		<!--[if IE]>
-		<link rel="stylesheet" href="reset.css,style.css" id="ie-enhanced-css" />
-		<![endif]-->
-	
-</head>
 <body>
 
 
-
+<a href="http://www.filamentgroup.com/" id="logo"><img src="fg-logo.gif" alt="Filament Group, Inc." /></a>
 
 	
 <div class="nav-primary">
    <h3>Sections...</h3>
 	<ul>
-		<li><a href="#">What We Do</a></li>
-		<li class="nav-current"><a href="#">What We've Done</a></li>
-		<li><a href="#">Who We Are</a></li>
-		<li><a href="#">What We're Thinking</a></li>
-		<li><a href="#">Contact Us</a></li>
+		<li><a href="http://www.filamentgroup.com/services">What We Do</a></li>
+		<li class="nav-current"><a href="http://www.filamentgroup.com/portfolio">What We've Done</a></li>
+		<li><a href="http://www.filamentgroup.com/lab">What We're Thinking</a></li>
+		<li><a href="http://www.filamentgroup.com/about">Who We Are</a></li>		
+		<li><a href="http://www.filamentgroup.com/contact">Contact Us</a></li>
 	</ul>
 </div>
 
@@ -45,5 +42,5 @@
 
 		
 		
-	</body>
+</body>
 </html>

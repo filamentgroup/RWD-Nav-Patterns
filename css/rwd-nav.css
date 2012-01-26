@@ -2,8 +2,13 @@
 ------------------------------ */
 
 body {
-    font: 85%/1.4 helvetica, sans-serif; 
-    padding: 1em .5em;
+    font: 62.5%/1.4 helvetica, arial, sans-serif; 
+    padding: 2em 1em;
+}
+
+#logo {
+   float: left;
+   margin: 0 0 1em; 
 }
 
 
@@ -11,14 +16,24 @@ body {
 ------------------------------ */
 .nav-primary {
    position: relative;
-   margin: .5em;
+   clear: left;
+}
+.nav-primary h3 {
+   display: none;
 }
 .nav-primary ul {
-   border: 1px solid #eee;
+   border: 1px solid #e6e6e6;
+}
+.nav-primary li {
+   font-size: 1.8em;
+   border-bottom: 1px solid #f8f8f8;
+}
+.nav-primary li:last-child {
+   border-bottom: 0;
 }
 .nav-primary a {
    display: block;
-   padding: .5em 1em;
+   padding: .5em .8em;
    text-decoration: none;
    color: #333;
 }
@@ -30,19 +45,25 @@ body {
 }
 
 /* drop down menu formatting when all menu items won't fit in a single line */
+.no-fit .nav-primary {
+   overflow: hidden;
+}
 .no-fit .nav-primary h3 {
    position: absolute;
-   top: -5px;
-   right: -5px;
+   top: 0;
+   right: 0;
    display: block;
-   width: 30px;
-   height: 30px; 
-   background: #666 url(img/icons.png) no-repeat -211px 5px;
+   width: 4em;
+   height: 4.5em; 
+   background: #666 url(img/icons.png) no-repeat -205px 50%;
    text-indent: -999em;
    cursor: pointer;
 }
+.no-fit .nav-primary a {
+   padding-right: 3em;
+}
 .no-fit .nav-primary.expanded h3 {
-   background-position: -175px 5px;
+   background-position: -169px 50%;
 }
 .no-fit .nav-primary li {
    clear: left;
@@ -52,6 +73,12 @@ body {
 .no-fit .nav-primary li.nav-current {
    display: list-item;
 } 
+.no-fit .nav-primary li.nav-current {
+   border-bottom-width: 0;
+}
+.no-fit .nav-primary.expanded li.nav-current {
+   border-bottom-width: 1px;
+}
 
 
 
@@ -59,15 +86,24 @@ body {
 /* Media queries
 ------------------------------ */
 
-@media screen and (min-width: 640px) {
-    .nav-primary ul {
+@media screen and (min-width: 500px) {
+   .nav-primary {
+      float: right;
+      clear: none;
+    }  
+}
+
+@media screen and (min-width: 910px) {
+   .nav-primary {
+      float: right;
+   }
+   .nav-primary ul {
+      float: right;
+      width: 100%;
+   }
+   .nav-primary li {
       float: left;
-      width: 98%;
-    }
-    .nav-primary h3 {
-      display: none;
-    }
-    .nav-primary li {
-      float: left;
-    }    
+      font-size: 1.5em;
+      border-bottom: 0;
+   }    
 }

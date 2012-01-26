@@ -14,8 +14,6 @@ jQuery(function($){
    $('.nav-primary')
       .bind('updatenav', function(){
             var nav = $(this),
-                  hdr = nav.find('h3'),
-                  list = nav.find('ul'),
                   items = nav.find('a');
                   
             $('body').removeClass('no-fit');
@@ -24,20 +22,21 @@ jQuery(function($){
             if ( $(items[items.length-1]).offset().top > $(items[0]).offset().top ) {
             
                // show all nav items (with styles scoped to this class)
-               $('body').addClass('no-fit');             
-               
-               // toggle the menu items' visiblity
-               hdr.click(function(){
-                  nav.toggleClass('expanded')
-                  return false;
-               });
+               $('body').addClass('no-fit');
                
             };
          })
-      // update the nav on load...
-      .trigger('updatenav');
+      
+      // update the nav on load
+      .trigger('updatenav')
+      
+      // toggle the menu items' visiblity
+      .find('h3')
+         .bind('click focus', function(){
+            $(this).parent().toggleClass('expanded')
+         });   
    
-   // ...and on window events
+   // ...and update the nav on window events
    $(window).bind('orientationchange resize', function(){
       $('.nav-primary').trigger('updatenav');
    });
