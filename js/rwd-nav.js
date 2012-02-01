@@ -12,7 +12,11 @@ jQuery(function($){
    $('html').addClass('hasJS');
 
    $('.nav-primary')
-      .bind('updatenav', function(){
+      // move the source - ?
+      .insertAfter('#logo')      
+      
+      // test the menu to see if all items fit horizontally
+      .bind('testfit', function(){
             var nav = $(this),
                   items = nav.find('a');
                   
@@ -28,7 +32,7 @@ jQuery(function($){
          })
       
       // update the nav on load
-      .trigger('updatenav')
+      .trigger('testfit')
       
       // toggle the menu items' visiblity
       .find('h3')
@@ -38,7 +42,7 @@ jQuery(function($){
    
    // ...and update the nav on window events
    $(window).bind('orientationchange resize', function(){
-      $('.nav-primary').trigger('updatenav');
+      $('.nav-primary').trigger('testfit');
    });
 
 });
