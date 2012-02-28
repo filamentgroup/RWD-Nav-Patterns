@@ -8,31 +8,22 @@
 
 jQuery(function($){
 
-   // scope styles to this class when JS is present
-   $('html').addClass('hasJS');
-
    $('.nav-primary')
-      // move the source - ?
-      .insertAfter('#logo')      
-      
       // test the menu to see if all items fit horizontally
       .bind('testfit', function(){
             var nav = $(this),
-                  items = nav.find('a');
+                items = nav.find('a');
                   
-            $('body').removeClass('no-fit');
+            $('body').removeClass('nav-menu');                                
                   
-            // when all nav options are on the same line                
-            if ( $(items[items.length-1]).offset().top > $(items[0]).offset().top ) {
+            // when the nav wraps under the logo, or when options are stacked, display the nav as a menu              
+            if ( (nav.offset().top > nav.prev().offset().top) || ($(items[items.length-1]).offset().top > $(items[0]).offset().top) ) {
             
-               // show all nav items (with styles scoped to this class)
-               $('body').addClass('no-fit');
+               // add a class for scoping menu styles
+               $('body').addClass('nav-menu');
                
-            };
+            };                    
          })
-      
-      // update the nav on load
-      .trigger('testfit')
       
       // toggle the menu items' visiblity
       .find('h3')
@@ -41,7 +32,7 @@ jQuery(function($){
          });   
    
    // ...and update the nav on window events
-   $(window).bind('orientationchange resize', function(){
+   $(window).bind('load resize orientationchange', function(){
       $('.nav-primary').trigger('testfit');
    });
 

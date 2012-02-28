@@ -7,41 +7,40 @@ body {
 }
 
 #logo {
-   display: block;
+   float: left;
    margin: 0 0 1em; 
 }
-.hasJS #logo {
-   float: left;
-}
-
-.hasJS .content {
-   clear: both;
-}
-
 p {
    font-size: 1.8em;
    line-height: 1.4;
    margin: 0 .3em 1em;
 }
+.content {
+   clear: both;
+}
 
-
+a.skip {
+   position: absolute;
+   left: -999em;
+}
 
 
 /* Navigation
 ------------------------------ */
 .nav-primary {
-   position: relative;
    clear: left;
+   margin: 0 0 2em;
 }
 .nav-primary h3 {
-   display: none;
+   position: absolute;
+   left: -999em;
 }
 .nav-primary ul {
    border: 1px solid #e6e6e6;
 }
 .nav-primary li {
    font-size: 1.8em;
-   border-bottom: 1px solid #f8f8f8;
+   border-bottom: 1px solid #eee;
 }
 .nav-primary li:last-child {
    border-bottom: 0;
@@ -60,63 +59,69 @@ p {
 }
 
 /* drop down menu formatting when all menu items won't fit in a single line */
-.no-fit .nav-primary {
-   overflow: hidden;
+.nav-menu .nav-primary {
    margin: 0 0 1.5em;
+   position: relative;
+   overflow: hidden;
 }
-.no-fit .nav-primary h3 {
+.nav-menu .nav-primary a {
+   padding-right: 3em;
+}
+.nav-menu .nav-primary h3 {
    position: absolute;
    top: 0;
+   left: auto;
    right: 0;
    display: block;
    width: 4em;
    height: 4.5em; 
-   background: #666 url(img/icons.png) no-repeat -205px 50%;
+   background: #ccc url(img/icons.png) no-repeat -205px 45%;
    text-indent: -999em;
    cursor: pointer;
 }
-.no-fit .nav-primary a {
-   padding-right: 3em;
+.nav-menu .nav-primary.expanded h3 {
+   background-position: -169px 45%;
 }
-.no-fit .nav-primary.expanded h3 {
-   background-position: -169px 50%;
-}
-.no-fit .nav-primary li {
+.nav-menu .nav-primary li {
    clear: left;
    display: none;
 }    
-.no-fit .nav-primary.expanded li,
-.no-fit .nav-primary li.nav-current {
+.nav-menu .nav-primary.expanded li,
+.nav-menu .nav-primary li.nav-current {
    display: list-item;
 } 
-.no-fit .nav-primary li.nav-current {
+.nav-menu .nav-primary li.nav-current {
    border-bottom-width: 0;
 }
-.no-fit .nav-primary.expanded li.nav-current {
+.nav-menu .nav-primary.expanded li.nav-current {
    border-bottom-width: 1px;
 }
-
-
 
 
 /* Media queries
 ------------------------------ */
 
-@media screen and (min-width: 500px) {
-   .hasJS .nav-primary {
-      float: right;
-      clear: none;
-    }  
-}
-
-@media screen and (min-width: 910px) {0
+@media screen and (min-width: 640px) {
+   .nav-primary,
    .nav-primary ul {
-      float: right;
-      width: 100%;
+      float: left;
    }
    .nav-primary li {
       float: left;
       font-size: 1.5em;
       border-bottom: 0;
+   }
+   .nav-menu .nav-primary {
+      float: right;
+      clear: none;
    }    
 }
+
+@media screen and (min-width: 910px) {
+   .nav-primary {
+      float: right;
+      clear: none;
+   }   
+}
+
+
