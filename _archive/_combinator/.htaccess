@@ -1,8 +1,0 @@
-# Rather than using a meta tag:
-BrowserMatch MSIE ie
-Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
-
-# Combinator:
-RewriteEngine on
-RewriteRule (.*\.css) combine.php?type=css&files=$1
-RewriteRule (.*\.js) combine.php?type=javascript&files=$1
