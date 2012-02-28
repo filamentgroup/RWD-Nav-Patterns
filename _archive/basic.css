@@ -1,0 +1,28 @@
+img { max-width: 100%; }
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.doc nav {
+	text-align: center;
+}
+nav ul,
+nav ol {
+	padding: 1em 0;
+	margin: 0;
+	display: block;
+	text-align: center;
+}
+nav li {
+	display: inline;
+	padding: 0 1em;
+}
+
+a {
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
