@@ -1,0 +1,224 @@
+/* Global
+------------------------------ */
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    font: 62.5%/1.4 helvetica, arial, sans-serif; 
+    background-color: #fcfcfc;
+}
+
+#logo {
+   float: left;
+   margin: 0 3em 1em 0; 
+}
+p {
+   font-size: 1.5em;
+   line-height: 1.4;
+   margin: 0 .3em 1em;
+}
+p.intro {
+   font-size: 1.8em;
+}
+
+.content {
+   clear: both;
+}
+
+#main {
+   position: relative;
+   z-index: 99;
+   padding: 2em 1.5em;
+   background-color: #fff;   
+   -webkit-transition: left 0.3s ease;
+   -moz-transition: left 0.3s ease;
+   -o-transition: left 0.3s ease;
+   transition: left 0.3s ease;
+}
+
+.button {
+   overflow: hidden;
+   -webkit-border-radius: 3px; 
+   -moz-border-radius: 3px; 
+   border-radius: 3px;  
+   border-right: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+   color: #333;
+   background-color: #eee;
+   text-decoration: none; 
+}
+.button:hover,
+.button:focus {
+   background-color: #f0f0f0;
+   border-color: #eee;
+}
+
+#show-nav {
+   float: left;
+   padding: .5em .5em .5em 3.2em;
+   margin: .7em 0 1.5em .3em;
+   background-image: url(img/icon-menu.png);
+   background-repeat: no-repeat;
+   background-position: .7em center;   
+}
+#hide-nav {
+   display: block;
+   position: absolute;
+   top: .7em;
+   right: 2em;
+   width: 20px;
+   height: 17px;
+   text-indent: 50%;
+   background-image: url(img/icon-close.png);
+   background-repeat: no-repeat;
+   background-position: center;   
+   border-left: 0;
+}
+
+
+/* Navigation
+------------------------------ */
+.nav-primary {
+   margin: 0 1.5em 2em;
+}
+.nav-primary h3 {
+   display: none;
+}
+.nav-primary ul {
+   border: 1px solid #e6e6e6;
+}
+.nav-primary li {
+   font-size: 1.6em;
+   border-bottom: 1px solid #eee;
+}
+.nav-primary li:last-child {
+   border-bottom-width: 0;
+}
+.nav-primary a {
+   display: block;
+   padding: .5em .8em;
+   text-decoration: none;
+   color: #333;
+   font-weight: bold;
+   border-left: 5px solid transparent;
+}
+.nav-primary a:hover,
+.nav-primary a:focus {
+   background-color: #f8f8f8;
+}
+.nav-primary .nav-current a {
+   border-left-color: #4E9426;
+}
+.nav-primary .nav-current ul a {
+   border-left-color: transparent;
+}
+
+/* styles for nested lists */
+.nav-primary li ul {
+   border: 0;
+   border-top: 1px solid #f6f6f6;
+}
+.nav-primary li li {
+   font-size: 1em;
+   border-color: #f6f6f6;
+}
+.nav-primary li li a {
+   padding-left: 2em; /* indent */
+   font-weight: normal;
+} 
+
+/* when JS is supported, hide the nav by default */
+html.hasJS, 
+.hasJS body {
+   height: 100%;
+}
+.hasJS #main {
+   min-height: 100%;   
+   min-width: 320px;
+}
+.hasJS .nav-primary {
+   position: absolute;
+   top: 0; 
+   left: 0;
+   z-index: 1;
+   display: none;
+   margin: 0;
+}
+.hasJS .nav-primary h3 {
+   display: block;
+   color: #ccc;
+   font-size: 1.2em;
+   padding: .5em .8em;
+}
+.hasJS .nav-primary ul {
+   border-color: #eee;
+}
+
+/* when the nav is visible */
+.nav-column .nav-primary {
+   width: 61%;
+   display: block;
+}
+.nav-column #main {
+   left: 60%;
+   width: 40%;
+   border-left: 1px solid #e6e6e6;
+   -moz-box-shadow:     -1px 0 10px 1px #eee;
+   -webkit-box-shadow:  -1px 0 10px 1px #eee;
+   box-shadow:              -1px 0 10px 1px #eee;
+}
+
+
+/* Media queries
+------------------------------ */
+
+@media screen and (min-width: 400px) {   
+   .nav-column .nav-primary {
+      width: 49%;
+   }
+   .nav-column #main {
+      left: 48%;
+      width: 52%;
+   }     
+}
+
+@media screen and (min-width: 480px) {   
+   .nav-column .nav-primary {
+      width: 41%;
+   }
+   .nav-column #main {
+      left: 40%;
+      width: 60%;
+   }     
+}
+
+@media screen and (min-width: 640px) {
+   .nav-column .nav-primary {
+      width: 31%;
+   }
+   .nav-column #main {
+      left: 30%;
+      width: 70%;
+   }      
+}
+
+@media screen and (min-width: 800px) {
+   .nav-column .nav-primary {
+      width: 25%;
+   }
+   .nav-column #main {
+      left: 24%;
+      width: 76%;
+   }      
+}
+
+@media screen and (min-width: 1000px) {
+   .nav-column .nav-primary {
+      width: 20.2%;
+   }
+   .nav-column #main {
+      left: 19.2%;
+      width: 80.8%;
+   }      
+}
