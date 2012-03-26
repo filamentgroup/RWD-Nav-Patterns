@@ -20,8 +20,10 @@ p {
 }
 
 a.skip {
-   position: absolute;
-   left: -999em;
+   display: block;
+   text-indent: 100%;
+   white-space: nowrap;
+   overflow: hidden;
 }
 
 
@@ -51,7 +53,8 @@ a.skip {
    text-decoration: none;
    color: #333;
 }
-.nav-primary a:hover {
+.nav-primary a:hover,
+.nav-primary a:focus {
    background-color: #f8f8f8;
 }
 .nav-primary .nav-current {
