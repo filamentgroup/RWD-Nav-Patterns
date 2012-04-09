@@ -20,10 +20,8 @@ p {
 }
 
 a.skip {
-   display: block;
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
+   position: absolute;
+   left: -999em;
 }
 
 
@@ -53,8 +51,7 @@ a.skip {
    text-decoration: none;
    color: #333;
 }
-.nav-primary a:hover,
-.nav-primary a:focus {
+.nav-primary a:hover {
    background-color: #f8f8f8;
 }
 .nav-primary .nav-current {
@@ -109,15 +106,14 @@ a.skip {
    .nav-primary ul {
       float: left;
    }
+   .nav-primary ul {
+      float: left;
+   }
    .nav-primary li {
       float: left;
       font-size: 1.5em;
       border-bottom: 0;
-   }
-   .nav-menu .nav-primary {
-      float: right;
-      clear: none;
-   }    
+   }   
 }
 
 @media screen and (min-width: 910px) {
