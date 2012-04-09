@@ -14,7 +14,7 @@ jQuery(function($){
             var nav = $(this),
                 items = nav.find('a');
                   
-            $('body').removeClass('nav-menu');                                
+            $('body').removeClass('nav-menu');                    
                   
             // when the nav wraps under the logo, or when options are stacked, display the nav as a menu              
             if ( (nav.offset().top > nav.prev().offset().top) || ($(items[items.length-1]).offset().top > $(items[0]).offset().top) ) {

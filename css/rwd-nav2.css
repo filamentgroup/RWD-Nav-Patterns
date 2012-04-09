@@ -117,7 +117,11 @@ p.intro {
 
 @media screen and (min-width: 480px) {
    .hasJS #show-nav {
-      display: none;
+      position: absolute;
+      left: -100px;
+   }
+   .hasJS #show-nav:focus {
+      left: 290px;
    }
    
    /* drop down menu formatting */   
@@ -142,17 +146,21 @@ p.intro {
       background: #ccc url(img/icons.png) no-repeat -205px 45%;
       text-indent: -999em;
       cursor: pointer;
+      z-index: 999;
    }
    .hasJS .nav-primary.expanded h3 {
       background-position: -169px 45%;
    }
    .hasJS .nav-primary li {
       clear: left;
-      display: none;
-   }    
+      height: 0; /* keeps links in the tab order, as opposed to hiding them, which doesn't */
+      border-width: 0;
+      overflow: hidden;
+   }   
    .hasJS .nav-primary.expanded li,
    .hasJS .nav-primary li.nav-current {
-      display: list-item;
+      height: auto;
+      border-width: 1px;
    } 
    .hasJS .nav-primary li.nav-current {
       border-bottom-width: 0;

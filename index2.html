@@ -37,23 +37,44 @@
    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 
-<div class="nav-primary" id="nav">
-   <h3>Sections:</h3>
-	<ul>
-		<li class="nav-current"><a href="http://www.filamentgroup.com/services">What We Do</a>
-		    <ul>
-            <li><a href="">Analysis & planning</a></li>
-            <li><a href="">Branding</a></li>
-            <li><a href="">UI design</a></li>
-            <li><a href="">Front-end code</a></li>
+<div id="nav" role="navigation" class="nav-primary">
+   <h3 id="navmenu-button" role="button" aria-haspopup="true" aria-owns="navmenu">Sections:</h3>   
+	<ul id="navmenu" role="menu" aria-labelledby="navmenu-button">	
+		<li role="menuitem" aria-haspopup="true"><a href="http://www.filamentgroup.com/services">What We Do</a>
+		    <ul role="menu">
+            <li role="menuitem"><a href="#">Analysis & planning</a></li>
+            <li role="menuitem"><a href="#">Branding</a></li>
+            <li role="menuitem"><a href="#">UI design</a></li>
+            <li role="menuitem"><a href="#">Front-end code</a></li>
 		    </ul>		
 		</li>
-		<li><a href="http://www.filamentgroup.com/portfolio">What We've Done</a></li>
-		<li><a href="http://www.filamentgroup.com/lab">What We're Thinking</a></li>
-		<li><a href="http://www.filamentgroup.com/about">Who We Are</a></li>		
-		<li><a href="http://www.filamentgroup.com/contact">Contact Us</a></li>
+		<li role="menuitem"><a href="http://www.filamentgroup.com/portfolio">What We've Done</a></li>
+		<li role="menuitem"><a href="http://www.filamentgroup.com/lab">What We're Thinking</a></li>
+		<li role="menuitem" aria-selected="true" class="nav-current"><a href="http://www.filamentgroup.com/about">Who We Are</a></li>		
+		<li role="menuitem"><a href="http://www.filamentgroup.com/contact">Contact Us</a></li>
 	</ul>
 </div>
+
+
+<!--
+<div class="nav-primary" id="nav" role="navigation">
+   <h3 id="menu-button" role="button" aria-haspopup="true" aria-owns="menu">Sections:</h3>   
+	<ul id="menu" role="listbox" aria-hidden="false" aria-labelledby="menu-button">	
+		<li aria-haspopup="true"><a role="option" href="http://www.filamentgroup.com/services">What We Do</a>
+		    <ul>
+            <li><a role="option" href="#">Analysis & planning</a></li>
+            <li><a role="option" href="#">Branding</a></li>
+            <li><a role="option" href="#">UI design</a></li>
+            <li><a role="option" href="#">Front-end code</a></li>
+		    </ul>		
+		</li>
+		<li><a role="option" href="http://www.filamentgroup.com/portfolio">What We've Done</a></li>
+		<li><a role="option" href="http://www.filamentgroup.com/lab">What We're Thinking</a></li>
+		<li aria-selected="true" class="nav-current"><a role="option" href="http://www.filamentgroup.com/about">Who We Are</a></li>		
+		<li><a role="option" href="http://www.filamentgroup.com/contact">Contact Us</a></li>
+	</ul>
+</div>
+-->
 
 
 			
